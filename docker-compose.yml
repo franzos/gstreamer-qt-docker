@@ -1,0 +1,16 @@
+version: '3.6'
+
+services:
+  builder:
+    container_name: qt-gst-builder
+    build:
+      context: ./.docker/5.15.8-lts-lgpl-gst-1.20.6-android
+      dockerfile: Dockerfile
+    #   network: host
+    # network_mode: host
+    command: tail -f /dev/null
+    environment:
+      - QT_GRAPHICSSYSTEM=native
+    volumes:
+      - .:/usr/src
+      - /tmp/.X11-unix:/tmp/.X11-unix
