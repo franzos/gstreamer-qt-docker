@@ -44,8 +44,10 @@ ENV OPENSSL_ROOT_DIR=/opt/android_openssl/ssl_1.1
 WORKDIR /usr/src
 
 RUN git clone https://gitlab.freedesktop.org/gstreamer/cerbero.git /vendor/cerbero && \
-    cd /vendor/cerbero && git checkout 1.20.6 
-RUN cd /vendor/cerbero && ./cerbero-uninstalled -c config/cross-android-universal.cbc bootstrap
-RUN cd /vendor/cerbero && ./cerbero-uninstalled -c config/cross-android-universal.cbc -v qt5 package gstreamer-1.0
+    cd /vendor/cerbero && git checkout 1.20.6 && \
+    ./cerbero-uninstalled -c config/cross-android-universal.cbc fetch-bootstrap && \
+    ./cerbero-uninstalled -c config/cross-android-universal.cbc fetch-package gstreamer-1.0
+RUN cd /vendor/cerbero && ./cerbero-uninstalled -c config/cross-android-universal.cbc bootstrap --offline && \
+    QMAKE=/opt/Qt-android-5.15.8-lts-lgpl/bin/qmake ./cerbero-uninstalled -c config/cross-android-universal.cbc -v qt5 package gstreamer-1.0 --offline
 
 ENTRYPOINT [ "" ]
