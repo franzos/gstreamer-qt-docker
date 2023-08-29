@@ -15,6 +15,10 @@ This is a Docker image for building Android applications on CI services specific
 - `franzos/gstreamer-qt:5.15.8-lts-lgpl-gst-1.22.2-android-v0.1` - First version of the image (`v0.1`)
   - Qt `5.15.8-lts`
   - GStreamer `1.22.2` with Qt (cross-android-universal)
+- `franzos/gstreamer-qt:5.15.8-lts-lgpl-gst-1.22.5-android-latest`
+- `franzos/gstreamer-qt:5.15.8-lts-lgpl-gst-1.22.5-android-v0.1` - First version of the image (`v0.1`)
+  - Qt `5.15.8-lts`
+  - GStreamer `1.22.5` with Qt (cross-android-universal)
 
 GStreamer was compiled with the following plugins:
 
@@ -27,8 +31,8 @@ GStreamer was compiled with the following plugins:
 | Type                               | Releases |    |    |
 |------------------------------------|----------|----|----|
 | 5.15.8-lts-lgpl-gst-1.20.6-android | latest   | v1 | v2 |
-| 5.15.8-lts-lgpl-gst-1.22.2-android | latest   | v1 |    |
-| 5.15.8-lts-lgpl-gst-1.22.2         |          |    |    |
+| 5.15.8-lts-lgpl-gst-1.22.2-android | latest   | v1 | v2 |
+| 5.15.8-lts-lgpl-gst-1.22.5-android | latest   | v1 |    |
 |                                    |          |    |    |
 
 ## Usage
